@@ -1,1 +1,0 @@
-System.register(["./consult-legacy-47466b10.js","./function-call-legacy-85d542e3.js"],(function(t,s){"use strict";var e,c;return{setters:[t=>{e=t.i},t=>{c=t.s}],execute:function(){t("u",(()=>({showPrescription:async t=>{if(t){const s=await e(t);c([s.url])}}})))}}}));

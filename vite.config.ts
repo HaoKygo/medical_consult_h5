@@ -11,15 +11,10 @@ import { VantResolver } from 'unplugin-vue-components/resolvers'
 // 导入打包精灵图插件
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
-import legacy from '@vitejs/plugin-legacy'
-
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/medical_consult_h5/', // 服务器中放置打包代码的目录名
   plugins: [
-    legacy({
-      targets: ['defaults', 'not IE 11']
-    }),
     vue({
       reactivityTransform: true
     }),
