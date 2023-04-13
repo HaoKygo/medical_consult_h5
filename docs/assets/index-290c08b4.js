@@ -1,0 +1,1 @@
+import{_ as e}from"./plugin-vueexport-helper-c27b6911.js";import{o,e as r}from"./index-52c3ae66.js";const c={};function n(t,s){return o(),r("div",null,"健康百科")}const f=e(c,[["render",n]]);export{f as default};
