@@ -13,7 +13,7 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // base: '/vue-test/',  // 服务器中放置打包代码的目录名
+  base: '/medical_consult_h5/', // 服务器中放置打包代码的目录名
   plugins: [
     vue({
       reactivityTransform: true
