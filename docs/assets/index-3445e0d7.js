@@ -1,0 +1,1 @@
+import{_ as e}from"./_plugin-vue_export-helper-c27b6911.js";import{o,e as r}from"./index-62acf543.js";const c={};function n(t,s){return o(),r("div",null,"消息中心")}const f=e(c,[["render",n]]);export{f as default};
