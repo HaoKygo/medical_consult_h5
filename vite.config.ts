@@ -11,7 +11,10 @@ import { VantResolver } from 'unplugin-vue-components/resolvers'
 // 导入打包精灵图插件
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
-// https://vitejs.dev/config/
+// eslint-disable-next-line no-control-regex
+const INVALID_CHAR_REGEX = /[\x00-\x1F\x7F<>*#"{}|^[\]`;?:&=+$,]/g
+const DRIVE_LETTER_REGEX = /^[a-z]:/i
+
 export default defineConfig({
   base: '/medical_consult_h5/', // 服务器中放置打包代码的目录名
   plugins: [
@@ -34,6 +37,19 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        sanitizeFileName(name) {
+          const match = DRIVE_LETTER_REGEX.exec(name)
+          const driveLetter = match ? match[0] : ''
+          return (
+            driveLetter + name.slice(driveLetter.length).replace(INVALID_CHAR_REGEX, '')
+          )
+        }
+      }
     }
   }
 })
