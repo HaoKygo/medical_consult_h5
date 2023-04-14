@@ -24,3 +24,5 @@ app.use(pinia)
 app.use(router)
 // 挂载渲染App根组件
 app.mount('#app')
+
+console.log('环境变量：', import.meta.env)

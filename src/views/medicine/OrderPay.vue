@@ -64,6 +64,8 @@ const submitPay = async () => {
     showPaySheet.value = true
   }
 }
+// 支付回调地址
+const callbackUrl = `${import.meta.env.VITE_APP_CALLBACK}/medicine/pay/result`
 </script>
 
 <template>
@@ -142,7 +144,7 @@ const submitPay = async () => {
       v-model:show="showPaySheet"
       :orderId="orderId"
       :actualPayment="medicineOrdrPre.actualPayment"
-      payCallback="http://localhost:5173/medicine/pay/result"
+      :payCallback="callbackUrl"
     ></McPaySheet>
   </div>
   <div class="order-pay-page" v-else>
